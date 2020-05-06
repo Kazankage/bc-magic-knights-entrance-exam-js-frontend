@@ -10,6 +10,11 @@
     background-size: cover;
 }
 
+  .asta{
+    position: absolute;
+    bottom: 20px;
+    right: 80px
+  }
   body{
     padding: 100px;
     margin: 0;
