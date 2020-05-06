@@ -54,9 +54,14 @@
     border-color: orange;
   }
 
-  .btn.choice {
+  .btn.correct {
     background-color: rgba(149, 165, 166, 1);
     color: white
+  }
+  
+  .btn.wrong {
+    background-color: white(149, 165, 166, 1);
+    color: black
   }
 
   .controls {
