@@ -1,11 +1,13 @@
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
+const resultsButton = document.getElementById('results-btn')
 const questionContainerElement = document.getElementById('question-container')
 startButton.addEventListener('click', startExam)
 nextButton.addEventListener('click', ()=> {
     currentQuestionIndex++
     setNextQuestion()
 })
+resultsButton.addEventListener('click', examResults)
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
@@ -57,8 +59,7 @@ function selectAnswer(e){
     if (shuffledQuestions.length > currentQuestionIndex +1){
     nextButton.classList.remove('hide')
     } else{
-        startButton.innerText= 'Start Over'
-        startButton.classList.remove('hide')
+        resultsButton.classList.remove('hide')
     }
 }
 
@@ -76,6 +77,11 @@ function clearStatusClass(element){
     element.classList.remove('wrong')
 }
 
+
+function examResults() { 
+    resultsButton.classList.add('hide')
+   
+}
 
 
 
