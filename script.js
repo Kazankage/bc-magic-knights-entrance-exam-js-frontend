@@ -16,16 +16,17 @@ const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
 let shuffledQuestions, currentQuestionIndex
-let squad=[ 'been chosen by the captain of the Golden Dawn! Congratulations',
-            'been chosen by the captain of the Silver Eagle! Congratulations',
-            'been chosen by the captain of the Crimson Lion! Congratulations',
+let squad=[    'been chosen by the captain of the Golden Dawn! Congratulations',
+            'been chosen by the captain of the Silver Eagles! Congratulations',
+            'been chosen by the captain of the Crimson Lions! Congratulations',
             'been chosen by the captain of the Blue Rose! Congratulations',
             'been chosen by the captain of the Green Mantis! Congratulations',
-            'been chosen by the captain of the Coral Peacock! Congratulations',
-            'been chosen by the captain of the Purple Orca! Congratulations',
-            'been chosen by the captain of the Azure Deer! Congratulations',
-            'been chosen by the captain the Black Bull! Congratulations',
+            'been chosen by the captain of the Coral Peacocks! Congratulations',
+            'been chosen by the captain of the Purple Orcas! Congratulations',
+            'been chosen by the captain of the Azure Deers! Congratulations',
+            'been chosen by the captain of the Black Bulls! Congratulations',
             'not been given an offer to join the Magic Knights. Try again'
+
  ];
 
 function startExam() { 
@@ -87,7 +88,7 @@ function showResults(){
 
 const questions = [
     {
-        question: 'What squad do you want to be on?',
+        question: 'Do you have a preference on what squad get placed in?',
         answers: [
             { text: 'Golden Dawn'},
             { text: 'Silver Eagle'},
@@ -99,37 +100,90 @@ const questions = [
             { text: 'Azure Deer'},
             { text: 'Black Bull'}
         ]
-
     },
     {
-        question: 'How do you best describe yourself?',
+        question: 'How do you best describe personality?',
         answers: [
-            { text: 'Focused' },
+            { text: 'Confident' },
+            { text: 'Crazy' },
             { text: 'Prideful' },
-            { text: 'Entitled' },
-            { text: 'Beautiful' },
-            { text: 'Cunning' },
-            { text: 'Stoic' },
-            { text: 'Tired' },
-            { text: 'Innocent' },
+            { text: 'Caring' },
+            { text: 'Relaxed' },
+            { text: 'Stubborn' },
+            { text: 'Protective' },
+            { text: 'Hot-headed' },
             { text: 'Rebellious' }
         ]
-
     }, 
     {
-        question: 'How do you best describe yourself?',
+        question: 'What is your preferred colour?',
         answers: [
-            { text: 'Focused' },
-            { text: 'Prideful' },
-            { text: 'Entitled' },
-            { text: 'Beautiful' },
-            { text: 'Cunning' },
-            { text: 'Stoic' },
-            { text: 'Tired' },
-            { text: 'Innocent' },
-            { text: 'Rebellious' }
+            { text: 'Gold' },
+            { text: 'Black' },
+            { text: 'Silver' },
+            { text: 'Blue' },
+            { text: 'Crimson' },
+            { text: 'Green' },
+            { text: 'Coral' },
+            { text: 'Purple' },
+            { text: 'Azure' }
         ]
-
+    },
+    {
+        question: 'What do you like to do on your down time?',
+        answers: [
+            { text: 'Relax' },
+            { text: 'Go on adventures' },
+            { text: 'Eat' },
+            { text: 'Read a book' },
+            { text: 'Play video games' },
+            { text: 'Train' },
+            { text: 'Hike' },
+            { text: 'Travel' },
+            { text: 'Sleep' }
+        ]
+    },
+    {
+        question: 'You see a person who seems to be down on his luck asking for change. What do you do?',
+        answers: [
+            { text: 'Give them money' },
+            { text: 'Point them to the nearest shelter' },
+            { text: 'Buy them something to eat' },
+            { text: 'Ignore them' },
+            { text: 'Make fun of them' },
+            { text: 'Challenge them for it' },
+            { text: 'Give them a lecture as to why you should not help them' },
+            { text: 'Stare at them with disgust' },
+            { text: 'Wave' }
+        ]
+    },
+    {
+        question: 'What is your goal in life?',
+        answers: [
+            { text: 'To be the best and recognized by others' },
+            { text: 'To protect others' },
+            { text: 'To help others' },
+            { text: 'To become rich' },
+            { text: 'To be able to relax' },
+            { text: 'To travel all over the world' },
+            { text: 'To be better' },
+            { text: 'To wake up tomorrow' },
+            { text: 'To catch them all' }
+        ]
+    },
+    {
+        question: 'Why do you want to be a Magic Knight?',
+        answers: [
+            { text: 'To be abel to eat all the glorious food' },
+            { text: 'To prove to others that I can be just as good, if not better than everyone else' },
+            { text: 'For the fame' },
+            { text: 'For companions' },
+            { text: 'For the power' },
+            { text: 'For the fight' },
+            { text: 'To be the best' },
+            { text: 'To protect others' },
+            { text: 'Just to be one' }
+        ]
     },
     {
         question: 'What magic do you weild?',
@@ -142,7 +196,7 @@ const questions = [
             { text: 'Wind' },
             { text: 'Water' },
             { text: 'Anti-Magic' },
-            { text: 'Darkness' }
+            { text: 'Creation' }
         ]
 
     }

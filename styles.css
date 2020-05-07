@@ -29,6 +29,8 @@
     height: 100vh;
     justify-content: left;
     align-items: center;
+    font-size: x-large;
+   
   }
 
   .container{
@@ -38,6 +40,7 @@
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 0 10px 2px;
+    font-size: x-large;
 
   }
 
@@ -54,6 +57,7 @@
     border-radius: 5px;
     padding: 5px;
     outline: none;
+    font-size: large;
   }
 
   .btn:hover, .btn.selected {
