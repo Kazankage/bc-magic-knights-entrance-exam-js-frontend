@@ -16,15 +16,16 @@ const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
 let shuffledQuestions, currentQuestionIndex
-let squad=['Golden Dawn',
-            'Silver Eagle',
-            'Crimson Lion',
-            'Blue Rose',
-            'Green Mantis',
-            'Coral Peacock',
-            'Purple Orca',
-            'Azure Deer',
-            'Black Bull'
+let squad=[ 'been chosen by the captain of the Golden Dawn! Congratulations',
+            'been chosen by the captain of the Silver Eagle! Congratulations',
+            'been chosen by the captain of the Crimson Lion! Congratulations',
+            'been chosen by the captain of the Blue Rose! Congratulations',
+            'been chosen by the captain of the Green Mantis! Congratulations',
+            'been chosen by the captain of the Coral Peacock! Congratulations',
+            'been chosen by the captain of the Purple Orca! Congratulations',
+            'been chosen by the captain of the Azure Deer! Congratulations',
+            'been chosen by the captain the Black Bull! Congratulations',
+            'not been given an offer to join the Magic Knights. Try again'
  ];
 
 function startExam() { 
@@ -47,9 +48,6 @@ function showQuestion(question) {
         const button = document.createElement('button')
             button.innerText = answer.text
             button.classList.add('btn')
-            // if (answer.correct){
-            //     button.dataset.correct = answer.correct
-            // }
             button.addEventListener('click', selectAnswer)
             answerButtonsElement.appendChild(button) 
     })
@@ -62,16 +60,11 @@ function resetState(){
         answerButtonsElement.removeChild
         (answerButtonsElement.firstChild)
     }
-
 }
 
 function selectAnswer(e){
-    const selectedButton = e.target
-    // const correct = selectedButton.dataset.correct
-    // setStatusClass(document.body, correct)
-    // Array.from(answerButtonsElement.children).forEach(button =>{
-    //     setStatusClass(button, button.dataset.correct)
-    // })
+    // const selectedButton = e.target
+    // element.classList.add('selected')
     if (shuffledQuestions.length > currentQuestionIndex +1){
     nextButton.classList.remove('hide')
     } else{
@@ -79,28 +72,16 @@ function selectAnswer(e){
     }
 }
 
-function setStatusClass (element, correct) {
-    clearStatusClass(element)
-    if (correct){
-        element.classList.add('correct')
-    } else {
-        element.classList.add('wrong')
-    }
-}
-
 function clearStatusClass(element){
-    element.classList.remove('correct')  
-    element.classList.remove('wrong')
+    element.classList.remove()  
 }
 
 function showResults(){
-    let results=(Math.floor(Math.random() * 9));
+    let results=(Math.floor(Math.random() * 10));
     resultsContainerElement.classList.remove('hide')
     questionContainerElement.classList.add('hide')
-    magicKnightSquad.innerHTML=squad[results];
     resultsButton.classList.add('hide')
-    startButton.innerText = "Restart"
-    startButton.classList.remove('hide')
+    magicKnightSquad.innerHTML=squad[results];
 }
 
 
@@ -121,17 +102,32 @@ const questions = [
 
     },
     {
-        question: 'How do you describe yourself?',
+        question: 'How do you best describe yourself?',
         answers: [
-            { text: 'Focused and Prideful' },
-            { text: 'Vain and Awesome' },
-            { text: 'Rich and Entitled' },
-            { text: 'Beautiful and Dangerous' },
-            { text: 'Evil and Cunning' },
+            { text: 'Focused' },
+            { text: 'Prideful' },
+            { text: 'Entitled' },
+            { text: 'Beautiful' },
+            { text: 'Cunning' },
             { text: 'Stoic' },
-            { text: 'Quiet and Tired' },
-            { text: 'Innocent and Deadly' },
-            { text: 'Odd and Rebel' }
+            { text: 'Tired' },
+            { text: 'Innocent' },
+            { text: 'Rebellious' }
+        ]
+
+    }, 
+    {
+        question: 'How do you best describe yourself?',
+        answers: [
+            { text: 'Focused' },
+            { text: 'Prideful' },
+            { text: 'Entitled' },
+            { text: 'Beautiful' },
+            { text: 'Cunning' },
+            { text: 'Stoic' },
+            { text: 'Tired' },
+            { text: 'Innocent' },
+            { text: 'Rebellious' }
         ]
 
     },
@@ -150,4 +146,5 @@ const questions = [
         ]
 
     }
+    
 ]

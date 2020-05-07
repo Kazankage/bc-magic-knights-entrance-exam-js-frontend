@@ -56,18 +56,9 @@
     outline: none;
   }
 
-  .btn:hover {
+  .btn:hover, .btn.selected {
     border-color: orange;
-  }
-
-  .btn.correct {
-    background-color: rgba(149, 165, 166, 1);
-    color: white
-  }
-  
-  .btn.wrong {
-    background-color: white(149, 165, 166, 1);
-    color: black
+    background-color: lightgray;
   }
 
   .controls {
@@ -81,11 +72,6 @@
   }
   
   .show-results{
-    /* width: 500px;
-    max-width: 50%;
-    background-color: rgba(255,255,255, 0.7);
-    border-radius: 5px;
-    box-shadow: 0 0 10px 2px; */
     text-align: center;
     padding: 10px;
   }
