@@ -1,21 +1,36 @@
-const startButton = document.getElementById('start-btn')
-const nextButton = document.getElementById('next-btn')
-const resultsButton = document.getElementById('results-btn')
-const questionContainerElement = document.getElementById('question-container')
+const startButton = document.getElementById('start-btn');
+const nextButton = document.getElementById('next-btn');
+const resultsButton = document.getElementById('results-btn');
+const questionContainerElement = document.getElementById('question-container');
+const resultsContainerElement = document.getElementById('results')
+const magicKnightSquad = document.querySelector(".squad");
 startButton.addEventListener('click', startExam)
 nextButton.addEventListener('click', ()=> {
     currentQuestionIndex++
     setNextQuestion()
 })
-resultsButton.addEventListener('click', examResults)
+resultsButton.addEventListener('click', showResults)
+
+
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
 let shuffledQuestions, currentQuestionIndex
+let squad=['Golden Dawn',
+            'Silver Eagle',
+            'Crimson Lion',
+            'Blue Rose',
+            'Green Mantis',
+            'Coral Peacock',
+            'Purple Orca',
+            'Azure Deer',
+            'Black Bull'
+ ];
 
 function startExam() { 
     startButton.classList.add('hide')
     questionContainerElement.classList.remove('hide')
+    resultsContainerElement.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     setNextQuestion()
@@ -32,15 +47,16 @@ function showQuestion(question) {
         const button = document.createElement('button')
             button.innerText = answer.text
             button.classList.add('btn')
-            if (answer.chosen){
-                button.dataset.correct = answer.chosen
-            }
+            // if (answer.correct){
+            //     button.dataset.correct = answer.correct
+            // }
             button.addEventListener('click', selectAnswer)
             answerButtonsElement.appendChild(button) 
     })
 }    
 
 function resetState(){
+    clearStatusClass(document.body)
     nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild
@@ -51,15 +67,15 @@ function resetState(){
 
 function selectAnswer(e){
     const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
-    Array.from(answerButtonsElement.children).forEach(button =>{
-        setStatusClass(button, button.dataset.correct)
-    })
+    // const correct = selectedButton.dataset.correct
+    // setStatusClass(document.body, correct)
+    // Array.from(answerButtonsElement.children).forEach(button =>{
+    //     setStatusClass(button, button.dataset.correct)
+    // })
     if (shuffledQuestions.length > currentQuestionIndex +1){
     nextButton.classList.remove('hide')
     } else{
-        resultsButton.classList.remove('hide')
+         resultsButton.classList.remove('hide')
     }
 }
 
@@ -77,12 +93,15 @@ function clearStatusClass(element){
     element.classList.remove('wrong')
 }
 
-
-function examResults() { 
+function showResults(){
+    let results=(Math.floor(Math.random() * 9));
+    resultsContainerElement.classList.remove('hide')
+    questionContainerElement.classList.add('hide')
+    magicKnightSquad.innerHTML=squad[results];
     resultsButton.classList.add('hide')
-   
+    startButton.innerText = "Restart"
+    startButton.classList.remove('hide')
 }
-
 
 
 const questions = [
